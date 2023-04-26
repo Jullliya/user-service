@@ -1,9 +1,9 @@
 package com.example.userservice.db.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "Users")
 public class User {
@@ -14,55 +14,15 @@ public class User {
     private Long id;
 
     @Column(name = "Name", length = 32, nullable = false)
-    private String Name = "Name";
+    private String name = "Name";
 
     @Column(name = "Surname", length = 32, nullable = false)
-    private String Surname = "Surname";
+    private String surname = "Surname";
 
     @Column(name = "Email", length = 24, nullable = false)
-    private String Email = "email@gmail.com";
+    private String email = "email@gmail.com";
 
     @Column(name = "Password", length = 16, nullable = false)
-    private String Password = "password";
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String Name) {
-        this.Name = Name;
-    }
-
-    public String getSurname() {
-        return Surname;
-    }
-
-    public void setSurname(String Surname) {
-        this.Surname = Surname;
-    }
-
-    public String getEmail() {
-        return Email;
-    }
-
-    public void setEmail(String Email) {
-        this.Email = Email;
-    }
-
-    public String getPassword() {
-        return Password;
-    }
-
-    public void setPassword(String Password) {
-        this.Password = Password;
-    }
+    private String password = "password";
 
 }
