@@ -1,11 +1,17 @@
 package com.example.userservice.db.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
+
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Data
 @Entity
 @Table(name = "Users")
+@NoArgsConstructor
 public class User {
 
     @Id
@@ -24,5 +30,12 @@ public class User {
 
     @Column(name = "Password", length = 16, nullable = false)
     private String password = "password";
+
+    public User(String name, String surname, String email, String password){
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.password = password;
+    };
 
 }
